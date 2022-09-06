@@ -5,9 +5,9 @@ const Movie = ({ item }) => {
   const [like, setLike] = useState(false);
 
   return (
-    <div className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] mt-2 inline-block cursor-pointer relative p-2 hover:scale-105  ease-linear duration-[250ms]">
+    <div className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] border-2 border-transparent rounded-lg mt-2 inline-block cursor-pointer relative m-1 hover:scale-[1.03] hover:border-gray-300 ease-linear duration-[250ms]">
       <img
-        className="w-full h-auto block"
+        className="w-full h-auto block rounded-lg"
         src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
         alt={item?.title}
       />
