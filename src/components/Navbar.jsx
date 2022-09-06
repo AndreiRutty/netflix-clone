@@ -30,7 +30,7 @@ const Navbar = () => {
           </Link>
           <button
             onClick={handleLogOut}
-            className="bg-[#E50914] px-6 py-2 rounded cursor-pointer text-white"
+            className="bg-[#E50914] px-6 py-2 rounded cursor-pointer text-white hover:bg-[#a90710]"
           >
             Logout
           </button>
@@ -38,10 +38,10 @@ const Navbar = () => {
       ) : (
         <div>
           <Link to="/login">
-            <button className="text-white pr-4">Sign In</button>
+            <button className="text-white pr-4 ">Sign In</button>
           </Link>
           <Link to="/signup">
-            <button className="bg-[#E50914] px-6 py-2 rounded cursor-pointer text-white">
+            <button className="bg-[#E50914] px-6 py-2 rounded cursor-pointer text-white hover:bg-[#a90710]">
               Sign Up
             </button>
           </Link>

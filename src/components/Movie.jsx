@@ -5,13 +5,13 @@ const Movie = ({ item }) => {
   const [like, setLike] = useState(false);
 
   return (
-    <div className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2">
+    <div className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] mt-2 inline-block cursor-pointer relative p-2 hover:scale-105  ease-linear duration-[250ms]">
       <img
         className="w-full h-auto block"
         src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
         alt={item?.title}
       />
-      <div className="absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100 text-white ease-linear duration-[250ms]">
+      <div className="absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0  hover:opacity-100 text-white ease-linear duration-[250ms]">
         <p className="whitespace-normal text-xs md:text-lg font-bold flex justify-center items-center h-full text-center">
           {item?.title}
         </p>
