@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 
 const SignUp = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -13,7 +14,7 @@ const SignUp = () => {
     e.preventDefault();
     setError("");
     try {
-      await signUp(email, password);
+      await signUp(name, email, password);
       console.log("done");
       navigate("/");
     } catch (error) {
@@ -26,6 +27,9 @@ const SignUp = () => {
           setError("Invalid credentials.");
           break;
 
+        case "Firebase: Password should be at least 6 characters (auth/weak-password).":
+          setError("Password should be at least 6 characters");
+          break;
         default:
           setError(error.message);
           break;
@@ -51,6 +55,13 @@ const SignUp = () => {
                 onSubmit={handleSubmit}
                 className="w-full flex flex-col py-4"
               >
+                <input
+                  onChange={(e) => setName(e.target.value)}
+                  className="p-3 my-2 bg-gray-700/50 rounded"
+                  type="text"
+                  placeholder="Name"
+                  autoComplete="name"
+                />
                 <input
                   onChange={(e) => setEmail(e.target.value)}
                   className="p-3 my-2 bg-gray-700/50 rounded"

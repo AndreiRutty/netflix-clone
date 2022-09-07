@@ -17,13 +17,17 @@ const Login = () => {
       console.log("done");
       navigate("/");
     } catch (error) {
-      if (error.message === "Firebase: Error (auth/wrong-password).") {
-        setError("Wrong Email or Password!");
-      } else {
-        setError(error.message);
+      switch (error.message) {
+        case "Firebase: Error (auth/wrong-password).":
+          setError("Wrong Email or Password!");
+          break;
+        case "Firebase: Error (auth/user-not-found).":
+          setError("Account not found!");
+          break;
+        default:
+          setError(error.message);
+          break;
       }
-
-      console.log(error);
     }
   };
   return (
